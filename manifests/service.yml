@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "mykubernetesdev-468c"
+    labels:
+        app: "mykubernetesdev-468c"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 8090
+      targetPort: 8090
+      protocol: TCP
+      name: http
+    selector:
+        app: "mykubernetesdev-468c"
