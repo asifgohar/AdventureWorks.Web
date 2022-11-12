@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mykubernetesdev-468c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mykubernetesdev-468c"
+  template:
+    metadata:
+      labels:
+        app: "mykubernetesdev-468c"
+    spec:
+      containers:
+        - name: "mykubernetesdev-468c"
+          image: "mykuberegplay.azurecr.io/mykubernetesdev"
+          ports:
+          - containerPort: 8090
